@@ -918,8 +918,8 @@ h4 {
 
     /* Mobile Hero */
     .hero {
-        min-height: 100svh;
-        padding: 6rem 0 3rem;
+        min-height: auto;
+        padding: 5rem 0 2rem;
     }
 
     .hero h1 {
