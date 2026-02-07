@@ -76,7 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const applyTheme = (theme) => {
     if (theme === 'light') {
       document.documentElement.classList.add('light-theme');
+      document.documentElement.classList.remove('dark-theme');
     } else {
+      document.documentElement.classList.add('dark-theme');
       document.documentElement.classList.remove('light-theme');
     }
   };
