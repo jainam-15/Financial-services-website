@@ -103,3 +103,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// Google Forms submission handler
+function handleFormSubmit() {
+  const form = document.getElementById('contactForm');
+  const successMessage = document.getElementById('formSuccess');
+
+  // Check if form is valid before allowing submission
+  if (!form.checkValidity()) {
+    // Show validation errors and prevent submission
+    form.reportValidity();
+    return false;
+  }
+
+  // Show success message after a short delay (to allow form submission)
+  setTimeout(() => {
+    form.style.display = 'none';
+    successMessage.style.display = 'block';
+  }, 500);
+
+  return true;
+}
+
+// Reset form to send another message
+function resetForm() {
+  const form = document.getElementById('contactForm');
+  const successMessage = document.getElementById('formSuccess');
+
+  form.reset();
+  form.style.display = 'block';
+  successMessage.style.display = 'none';
+}
