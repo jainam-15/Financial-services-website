@@ -55,6 +55,16 @@
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    .footer {
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    .section-dark {
+        color: rgba(255, 255, 255, 0.85);
+    }
+}
+
 /* Light Theme Override (for toggle button) */
 html.light-theme {
     --primary: #1a365d;
@@ -101,6 +111,14 @@ html.dark-theme {
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.4);
     color-scheme: dark;
+}
+
+html.dark-theme .footer {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+html.dark-theme .section-dark {
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* Reset */
@@ -179,7 +197,7 @@ h4 {
 }
 
 .section {
-    padding: 5rem 0;
+    padding: 2rem 0;
 }
 
 .section-dark {
@@ -337,7 +355,7 @@ h4 {
 
 /* Hero */
 .hero {
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     padding-top: 80px;
@@ -426,7 +444,7 @@ h4 {
 
 /* Services */
 .service-category {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .service-category h3 {
@@ -670,7 +688,7 @@ h4 {
 /* Page Header */
 .page-header {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    padding: 8rem 0 4rem;
+    padding: 6.5rem 0 2.5rem;
     text-align: center;
     color: var(--white);
 }
@@ -856,7 +874,7 @@ h4 {
     }
 
     .section {
-        padding: 3rem 0;
+        padding: 1.75rem 0;
     }
 
     /* Mobile Grid - Single Column */
