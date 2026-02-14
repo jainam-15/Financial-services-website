@@ -62,13 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Theme Toggle Functionality
   const themeToggle = document.getElementById('themeToggle');
 
-  // Check for saved theme preference or default to system preference
-  const getPreferredTheme = () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      return savedTheme;
-    }
-    // Check system preference
+  // Always use system preference
+  const getSystemTheme = () => {
     return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
   };
 
@@ -83,26 +78,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Initialize theme
-  const currentTheme = getPreferredTheme();
-  applyTheme(currentTheme);
+  // Initialize theme from system preference
+  applyTheme(getSystemTheme());
 
-  // Theme toggle click handler
+  // Theme toggle click handler (session only, no persistence)
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       const isLight = document.documentElement.classList.contains('light-theme');
-      const newTheme = isLight ? 'dark' : 'light';
-
-      applyTheme(newTheme);
-      localStorage.setItem('theme', newTheme);
+      applyTheme(isLight ? 'dark' : 'light');
     });
   }
 
-  // Listen for system theme changes
+  // Listen for system theme changes (always follow)
   window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-      applyTheme(e.matches ? 'light' : 'dark');
-    }
+    applyTheme(e.matches ? 'light' : 'dark');
   });
 });
 
