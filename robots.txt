@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://financial-services-website.vercel.app/sitemap.xml
